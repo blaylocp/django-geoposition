@@ -1,24 +1,14 @@
+:set insert
 <div class="geoposition-widget" data-map-widget-height="{{ config.map_widget_height }}" data-map-options="{{ config.map_options }}" data-marker-options="{{ config.marker_options }}">
-    <table>
-        <tr>
-            <td>{{ latitude.label|capfirst }}</td>
-            <td>
-                {% if latitude.widget %}
-                    {% include latitude.widget.template_name with widget=latitude.widget %}
-                {% else %}
-                    {{ latitude.html }}
-                {% endif %}
-            </td>
-        </tr>
-        <tr>
-            <td>{{ longitude.label|capfirst }}</td>
-            <td>
-                {% if longitude.widget %}
-                    {% include longitude.widget.template_name with widget=longitude.widget %}
-                {% else %}
-                    {{ longitude.html }}
-                {% endif %}
-            </td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <td>{{ latitude.label|capfirst }}</td>
+                <td>{% include latitude.html.template_name with widget=latitude.html %}</td>
+            </tr>
+            <tr>
+                <td>{{ longitude.label|capfirst }}</td>
+                <td>{% include longitude.html.template_name with widget=longitude.html %}</td>
+            </tr>
+        </table>
 </div>
+
